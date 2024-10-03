@@ -1,9 +1,0 @@
-Checksum Calculation: The checksum function is used to generate the checksum for the ICMP header.
-Raw Sockets: The program creates a raw socket using socket(AF_INET, SOCK_RAW, IPPROTO_ICMP).
-ICMP Header: The ICMP header is manually constructed in the packet buffer, and the checksum is calculated.
-Sending Packets: The sendto function sends an ICMP ECHO request.
-Receiving Packets: The recvfrom function listens for an ICMP ECHO reply. If the -v flag is provided and an error occurs, it prints the error message instead of exiting.
-Command-Line Arguments: The program handles the -v (verbose) and -? (help) options.
-Limitations:
-This implementation is basic and doesn’t handle every edge case or all options available in the real ping command.
-DNS resolution is managed via gethostbyname, but no DNS resolution is done on the reply, as required.
